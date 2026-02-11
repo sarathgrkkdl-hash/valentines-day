@@ -1,0 +1,154 @@
+/* reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* pink base background */
+body {
+    background: linear-gradient(to bottom, #f3dded, #e90bc1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* faded background image layer */
+.bg-slideshow {
+    position: fixed;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.25;              /* 🔥 controls fade */
+    transition: background-image 1s ease-in-out;
+    z-index: 0;
+}
+
+/* main container */
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* title */
+h1 {
+    color: #171415;
+    margin-bottom: 20px;
+}
+
+/* image */
+#valentineImage {
+    max-width: 350px;
+    margin-bottom: 30px;
+}
+
+/* buttons */
+.buttons {
+    position: relative;
+}
+
+#yesButton {
+    background-color: #06d6a0;
+    width: 120px;
+    height: 40px;
+    font-size: 26px;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+#no {
+    background-color: #ef476f;
+    width: 120px;
+    height: 40px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+}
+
+/* floating hearts */
+.hearts-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.heart {
+    position: absolute;
+    bottom: -20px;
+    font-size: 24px;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* heart explosion */
+.heart-burst {
+    position: fixed;
+    font-size: 22px;
+    pointer-events: none;
+    animation: burst 1.4s ease-out forwards;
+    z-index: 3;
+}
+
+@keyframes burst {
+    to {
+        transform: translate(var(--x), var(--y)) scale(1.8);
+        opacity: 0;
+    }
+}
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Modal box */
+.modal-content {
+  background: #fff;
+  max-width: 500px;
+  margin: 10% auto;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  animation: pop 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
