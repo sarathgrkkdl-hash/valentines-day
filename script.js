@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const backgrounds = [
       "./images/beach.jpeg",
       "./images/bg1.jpeg",
-      "./images/bg2.jpg",
+      "./images/bg22.jpg",
       "./images/bg3.jpeg",
      
     ];
